@@ -72,7 +72,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         reply_markup = InlineKeyboardMarkup(keyboard)
 
-        await query.message.reply_text("ㅤ", reply_markup=reply_markup)
+        await query.message.reply_text("تفضل الرابط 👇", reply_markup=reply_markup)
 
     # ℹ️ help
     elif query.data == "help":
@@ -98,7 +98,7 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
         reply_markup = InlineKeyboardMarkup(keyboard)
 
-        await query.message.reply_text("ㅤ", reply_markup=reply_markup)
+        await query.message.reply_text("تفضل الرابط 👇", reply_markup=reply_markup)
 
     # 🔙 back
     elif query.data == "back":
