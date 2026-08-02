@@ -49,7 +49,16 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # 🔥 services
     elif query.data == "services":
-        await query.edit_message_text("🔥 نقدم خدمات رائعة 😎")
+        # On remet les boutons de l'accueil (Start)
+        keyboard = [
+            [InlineKeyboardButton("📋 القائمة", callback_data="menu")],
+            [InlineKeyboardButton("ℹ️ مساعدة", callback_data="help")],
+            [InlineKeyboardButton("💬 تحدث", callback_data="talk")]
+        ]
+        await query.edit_message_text(
+            "🔥 نقدم خدمات رائعة 😎\n\nماذا تريد أن تفعل أيضاً؟ 👇",
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
 
     # 📞 contact
     elif query.data == "contact":
@@ -76,7 +85,16 @@ async def button_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     # ℹ️ help
     elif query.data == "help":
-        await query.edit_message_text("ℹ️ كيف يمكنني مساعدتك؟")
+        # On remet les boutons de l'accueil (Start)
+        keyboard = [
+            [InlineKeyboardButton("📋 القائمة", callback_data="menu")],
+            [InlineKeyboardButton("ℹ️ مساعدة", callback_data="help")],
+            [InlineKeyboardButton("💬 تحدث", callback_data="talk")]
+        ]
+        await query.edit_message_text(
+            "ℹ️ كيف يمكنني مساعدتك؟",
+            reply_markup=InlineKeyboardMarkup(keyboard)
+        )
 
     # 💬 talk
     elif query.data == "talk":
